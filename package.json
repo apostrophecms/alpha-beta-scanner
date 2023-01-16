@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "alpha-beta-scanner": "./app.mjs"
+  },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/apostrophecms/alpha-beta-scanner.git"

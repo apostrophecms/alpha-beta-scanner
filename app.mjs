@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import fetch from 'node-fetch';
 import boring from 'boring';
 
@@ -22,6 +24,7 @@ let stable = 0;
 let unstable = 0;
 for (const repo of repos) {
   const url = `https://api.github.com/repos/${owner}/${repo}/contents/package.json`;
+  console.log(url);
   const headers = {
     'User-Agent': 'alpha-beta-scanner'
   };
@@ -35,7 +38,9 @@ for (const repo of repos) {
     continue;
   }
   if (response.status >= 400) {
-    throw response;
+    const error = await response.text();
+    console.error(error || respons.status);
+    process.exit(1);
   }
   const content = await response.json();
   const data = Buffer.from(content.content, 'base64').toString('utf8');
@@ -60,6 +65,7 @@ async function getRepos(type, owner) {
   let page = 1;
   while (true) {
     const url = `https://api.github.com/${type}/${owner}/repos?page=${page}`;
+    console.log(url);
     const headers = {
       'User-Agent': 'alpha-beta-scanner'
     };
@@ -70,6 +76,10 @@ async function getRepos(type, owner) {
     if (response.status === 404) {
       // They should handle it this way
       return repos;
+    } else if (response.status >= 400) {
+      const error = await response.text();
+      console.error(error || respons.status);
+      process.exit(1);
     }
     const found = await response.json();
     if (!found.length) {
