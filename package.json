@@ -1,0 +1,24 @@
+{
+  "name": "alpha-beta-scanner",
+  "version": "1.0.0",
+  "description": "Scan your github for packages that are still marked as alpha or beta releases",
+  "main": "app.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apostrophecms/alpha-beta-scanner.git"
+  },
+  "author": "Apostrophe Technologies LLC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apostrophecms/alpha-beta-scanner/issues"
+  },
+  "homepage": "https://github.com/apostrophecms/alpha-beta-scanner#readme",
+  "dependencies": {
+    "boring": "^1.1.1",
+    "fetch": "^1.1.0",
+    "node-fetch": "^3.3.0"
+  }
+}
