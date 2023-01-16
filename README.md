@@ -4,7 +4,7 @@ Scans your github organization or personal account for projects whose current `p
 
 ## Why?
 
-We ship lots of open source software. Sometimes changes are needed before we declare it to be stable. Other times, a year will pass and nobody notices it's still considered "beta." This tool to the rescue.
+We ship lots of open source packages at [ApostropheCMS](https://apostrophecms.com). Sometimes changes are needed before we declare it to be stable. Other times, a year will pass and nobody notices it's still considered "beta." This tool to the rescue.
 
 ## Install
 ```bash
